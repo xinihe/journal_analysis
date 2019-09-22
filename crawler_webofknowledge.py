@@ -73,8 +73,9 @@ def is_relevant(sentence):
 
 def con_mysql(sql):    
 #连接MySQL数据库
-    conn = mysql.connector.connect(host="10.23.0.2",port=3306,user="root",\
-                       password="11031103",database="fintech",charset="utf8")
+    # 加入合适的host，password 
+    conn = mysql.connector.connect(host="*****",port=3306,user="root",\
+                       password="*****",database="fintech",charset="utf8")
     cur = conn.cursor()
     cur.execute(sql)
     conn.commit()
