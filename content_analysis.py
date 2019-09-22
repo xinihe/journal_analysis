@@ -26,8 +26,8 @@ def gen_wordcloud(text):
     return wordcloud
 
 def con_mysql(sql):  
-    conn = mysql.connector.connect(host="10.23.0.2",port=3306,user="root",\
-                           password="11031103",database="cnki",charset="utf8")
+    conn = mysql.connector.connect(host="*****",port=3306,user="root",\
+                           password="*****",database="cnki",charset="utf8")
     cur = conn.cursor()
     cur.execute(sql)
     info = cur.fetchall()
@@ -36,7 +36,7 @@ def con_mysql(sql):
 
 def get_info(table_name):
 
-    engine = create_engine('mysql+pymysql://root:11031103@10.23.0.2:3306/fintech?charset=utf8')
+    engine = create_engine('mysql+pymysql://root:******@10.23.0.2:3306/fintech?charset=utf8')
     content_list = 'pkeywords, ppage, volume, pdate, authors, paddress, title' #where_cond = "pdate like '%2018'" 
     sql_cmd = "select {} from {} ".format(content_list, table_name)
     # retrieval data from database
